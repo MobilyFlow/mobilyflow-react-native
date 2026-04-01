@@ -69,8 +69,16 @@ class MobilyflowReactNativeSdkModule(reactContext: ReactApplicationContext) :
     }
   }
 
-  override fun logout() {
-    MobilyPurchaseSDK.logout()
+  override fun logout(promise: Promise) {
+    val executor = Executors.newSingleThreadExecutor()
+    executor.execute {
+      try {
+        MobilyPurchaseSDK.logout()
+        promise.resolve(0)
+      } catch (error: Exception) {
+        throwError(error, promise)
+      }
+    }
   }
 
   override fun getProducts(identifiers: ReadableArray?, onlyAvailable: Boolean, promise: Promise) {

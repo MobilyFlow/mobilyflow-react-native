@@ -1,6 +1,6 @@
 {
   "name": "mobilyflow-react-native-sdk",
-  "version": "0.5.3-alpha.1",
+  "version": "0.6.0",
   "description": "MobilyFlow React Native SDK",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -16,7 +16,9 @@
         "types": "./lib/typescript/commonjs/src/index.d.ts",
         "default": "./lib/commonjs/index.js"
       }
-    }
+    },
+    "./app.plugin.js": "./app.plugin.js",
+    "./package.json": "./package.json"
   },
   "files": [
     "src",
@@ -26,6 +28,7 @@
     "cpp",
     "*.podspec",
     "react-native.config.js",
+    "app.plugin.js",
     "!ios/build",
     "!android/build",
     "!android/gradle",
