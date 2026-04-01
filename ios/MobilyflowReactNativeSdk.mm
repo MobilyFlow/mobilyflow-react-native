@@ -182,15 +182,16 @@ RCT_EXPORT_MODULE()
 
 - (void)purchaseProduct:(NSString *)productId options:(JS::NativeMobilyflowReactNativeSdk::PurchaseOptions &)options resolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
 
-
+  // Read options BEFORE the async block — `options` is a reference to a stack-allocated struct
+  // that will be destroyed when this method returns.
+  NSUUID *offerId = options.offerId() != nil ? [self parseUUID:options.offerId()] : nil;
+  int quantity = options.quantity().has_value() ? (int)options.quantity().value() : 1;
+  
   [MobilyPurchaseSDK DANGEROUS_getProductFromCacheWithId:[self parseUUID:productId] completionHandler:^(MobilyProduct * _Nullable product) {
     if (product == nil) {
       reject(@"3", @"MobilyflowSDK.MobilyError.unknown_error", [NSError errorWithDomain:@"MobilyflowSDK.MobilyError" code:3 userInfo:nil]);
       return;
     }
-    
-    NSUUID *offerId = [self parseUUID:options.offerId()];
-    int quantity = (int)options.quantity();
 
     PurchaseOptions *purchaseOptions = [[PurchaseOptions alloc] init];
     if (quantity > 1) {

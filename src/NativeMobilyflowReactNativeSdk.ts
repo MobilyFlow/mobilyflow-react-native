@@ -13,8 +13,8 @@ export type MobilyPurchaseSDKOptions = {
 };
 
 type PurchaseOptions = {
-  offerId: string;
-  quantity: number;
+  offerId: string | null;
+  quantity: number | null;
 };
 
 export interface Spec extends TurboModule {
