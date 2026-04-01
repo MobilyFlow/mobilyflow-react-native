@@ -11,6 +11,7 @@ import { useMobilyflowStore } from '../../stores/mobilyflow-store';
 import { getMobilyflowErrorLabel } from '../../utils/utils';
 import { useMobilyflowRefresh } from '../../services/use-mobilyflow-refresh';
 import { MOBILYFLOW_API_EXTRA_URLS } from '../../../env';
+import { useQueryClient } from '@tanstack/react-query';
 
 export const HomeScreen = () => {
   const { customerId, environment, apiUrl } = useMobilyflowParams();
@@ -18,6 +19,7 @@ export const HomeScreen = () => {
   const [storeCountry, setStoreCountry] = useState<string>();
   const [mobilyflowCustomerId, setMobilyFlowCustomerId] = useState<string>();
 
+  const queryClient = useQueryClient();
   const isMobilyflowLoading = useMobilyflowStore((state) => state.isLoading);
   const mobilyflowError = useMobilyflowStore((state) => state.error);
   const errorLabel = useMemo(() => getMobilyflowErrorLabel(mobilyflowError), [mobilyflowError]);
@@ -43,7 +45,9 @@ export const HomeScreen = () => {
 
   const handleTransferOwnership = useCallback(async () => {
     await MobilyPurchaseSDK.requestTransferOwnership();
-  }, []);
+    await queryClient.invalidateQueries({ queryKey: ['mobilyflow', 'entitlements'] });
+    await queryClient.invalidateQueries({ queryKey: ['mobilyflow', 'external-entitlements'] });
+  }, [queryClient]);
 
   const handleSendDiagnostic = useCallback(async () => {
     await MobilyPurchaseSDK.sendDiagnostic();
