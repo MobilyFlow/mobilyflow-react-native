@@ -1,5 +1,5 @@
 export enum MobilyRefundDialogResult {
-  CANCELLED = 'cancelled',
-  SUCCESS = 'success',
-  TRANSACTION_NOT_FOUND = 'transaction_not_found',
+  CANCELLED = 'CANCELLED',
+  SUCCESS = 'SUCCESS',
+  TRANSACTION_NOT_FOUND = 'TRANSACTION_NOT_FOUND',
 }

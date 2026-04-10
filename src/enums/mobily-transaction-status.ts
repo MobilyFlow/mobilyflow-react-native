@@ -1,5 +1,5 @@
 export enum MobilyTransactionStatus {
-  SUCCESS = 'success',
-  BILLING_ERROR = 'billing-error',
-  REFUNDED = 'refunded',
+  SUCCESS = 'SUCCESS',
+  BILLING_ERROR = 'BILLING_ERROR',
+  REFUNDED = 'REFUNDED',
 }

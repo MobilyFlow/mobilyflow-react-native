@@ -1,6 +1,7 @@
 export enum MobilyTransferOwnershipStatus {
-  PENDING = 'pending',
-  DELAYED = 'delayed',
-  ACKNOWLEDGED = 'acknowledged',
-  REJECTED = 'rejected',
+  PENDING = 'PENDING',
+  DELAYED = 'DELAYED',
+  ACKNOWLEDGED = 'ACKNOWLEDGED',
+  REJECTED = 'REJECTED',
+  ERROR = 'ERROR',
 }

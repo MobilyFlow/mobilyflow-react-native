@@ -1,5 +1,6 @@
 export enum MobilyWebhookStatus {
-  PENDING = 'pending',
-  ERROR = 'error',
-  SUCCESS = 'success',
+  PENDING = 'PENDING',
+  FAILED = 'FAILED',
+  IGNORED = 'IGNORED',
+  SUCCESS = 'SUCCESS',
 }

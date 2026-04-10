@@ -1,4 +1,4 @@
 export enum MobilyProductType {
-  ONE_TIME = 'one_time',
-  SUBSCRIPTION = 'subscription',
+  ONE_TIME = 'ONE_TIME',
+  SUBSCRIPTION = 'SUBSCRIPTION',
 }

@@ -1,5 +1,5 @@
 export enum MobilyProductStatus {
-  INVALID = 'invalid',
-  UNAVAILABLE = 'unavailable',
-  AVAILABLE = 'available',
+  INVALID = 'INVALID',
+  UNAVAILABLE = 'UNAVAILABLE',
+  AVAILABLE = 'AVAILABLE',
 }
