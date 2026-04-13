@@ -92,7 +92,13 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
-        release {}
+        release {
+            // TODO: Change to production keystore when release
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
     }
     buildTypes {
         debug {
