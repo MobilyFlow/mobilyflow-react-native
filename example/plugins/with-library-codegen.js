@@ -63,31 +63,7 @@ preBuild.dependsOn invokeLibraryCodegen
         comment: '#',
       });
 
-      // Add Xcode 26 + use_frameworks C++ fix inside the post_install block.
-      // We do a direct string replacement since mergeContents anchoring is fragile
-      // with the multi-line react_native_post_install() call.
-      let finalContents = preInstallResult.contents;
-      const xcodeFix = [
-        '',
-        '    # @generated begin xcode26-cxx-fix - expo prebuild (DO NOT MODIFY)',
-        '    # Xcode 26 workaround: ensure C++ standard library headers are available',
-        '    # when use_frameworks! is enabled (required for Swift MobilyflowSDK dependency)',
-        '    installer.pods_project.targets.each do |target|',
-        '      target.build_configurations.each do |build_config|',
-        '        build_config.build_settings["CLANG_CXX_LANGUAGE_STANDARD"] ||= "c++20"',
-        '      end',
-        '    end',
-        '    # @generated end xcode26-cxx-fix',
-      ].join('\n');
-
-      // Insert before the closing `end` of the post_install block
-      // The post_install block ends with "  end\nend" (2-space indent end, then root end)
-      finalContents = finalContents.replace(
-        /(\n  end\nend\s*$)/,
-        xcodeFix + '$1'
-      );
-
-      fs.writeFileSync(podfilePath, finalContents);
+      fs.writeFileSync(podfilePath, preInstallResult.contents);
       return config;
     },
   ]);

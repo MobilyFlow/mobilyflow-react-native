@@ -30,6 +30,7 @@ const config: ExpoConfig = {
       },
     ],
     './plugins/with-library-codegen',
+    './plugins/with-fmt-fix',
     // SDK config plugin — enable only if using Firebase Analytics:
     // ['../app.plugin.js', { enabledFirebaseAnalytics: true }],
   ],
