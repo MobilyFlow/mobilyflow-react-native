@@ -1,0 +1,20 @@
+# Expo generated native projects
+android/
+ios/
+
+# Expo
+.expo/
+dist/
+web-build/
+
+# Node
+node_modules/
+
+# Metro
+.metro-health-check*
+
+# macOS
+.DS_Store
+
+# TypeScript
+*.tsbuildinfo
