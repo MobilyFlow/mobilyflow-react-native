@@ -17,5 +17,14 @@ export default ({  }: ConfigContext): ExpoConfig => ({
     versionCode: 5,
     permissions: ["com.android.vending.BILLING", "INTERNET"],
   },
-  plugins: [],
+  plugins: [
+    [
+      "expo-build-properties",
+      {
+        ios: {
+          deploymentTarget: "15.1",
+        },
+      },
+    ],
+  ],
 });
