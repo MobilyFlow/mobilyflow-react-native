@@ -26,7 +26,7 @@ export const usePurchaseProduct = () => {
       } catch (error: any) {
         ProgressManager().hide();
         await DialogManager()
-          .push(PurchaseResultDialog, { status: MobilyWebhookStatus.ERROR, error })
+          .push(PurchaseResultDialog, { status: MobilyWebhookStatus.FAILED, error })
           .waitIgnoreCancel();
       }
     },

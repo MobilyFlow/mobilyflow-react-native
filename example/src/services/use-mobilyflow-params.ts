@@ -3,7 +3,6 @@ import { MobilyFlowService } from './mobilyflow-service';
 import { MobilyEnvironment } from 'mobilyflow-react-native-sdk';
 
 export const useMobilyflowParams = () => {
-  // eslint-disable-next-line dot-notation
   const storage = MobilyFlowService['storage'];
 
   const [customerId] = useMMKVString('customerId', storage);
