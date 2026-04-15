@@ -1,12 +1,18 @@
-const path = require('path');
 const { getDefaultConfig } = require('expo/metro-config');
-const { getConfig } = require('react-native-builder-bob/metro-config');
-const pkg = require('../package.json');
+const path = require('path');
 
-const root = path.resolve(__dirname, '..');
+const projectRoot = __dirname;
+const monorepoRoot = path.resolve(projectRoot, '..');
 
-module.exports = getConfig(getDefaultConfig(__dirname), {
-  root,
-  pkg,
-  project: __dirname,
-});
+const config = getDefaultConfig(projectRoot);
+
+// Watch the monorepo root so Metro can find the library source
+config.watchFolders = [monorepoRoot];
+
+// Resolve node_modules from both example and root
+config.resolver.nodeModulesPaths = [
+  path.resolve(projectRoot, 'node_modules'),
+  path.resolve(monorepoRoot, 'node_modules'),
+];
+
+module.exports = config;
