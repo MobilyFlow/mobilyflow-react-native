@@ -23,12 +23,13 @@ const config: ExpoConfig = {
       {
         android: {
           minSdkVersion: 24,
-          compileSdkVersion: 35,
+          compileSdkVersion: 36,
           targetSdkVersion: 35,
           kotlinVersion: '2.1.20',
         },
       },
     ],
+    './plugins/with-library-codegen',
     // SDK config plugin — enable only if using Firebase Analytics:
     // ['../app.plugin.js', { enabledFirebaseAnalytics: true }],
   ],
