@@ -82,9 +82,11 @@ lib/
 ios/generated
 android/generated
 
-/example/android/app/release
-/example/android/app/nouslib
-/example/android/.kotlin/errors
+/example_legacy/android/app/release
+/example_legacy/android/app/nouslib
+/example_legacy/android/.kotlin/errors
+/example_legacy/vendor
+/example_legacy/ios/Pods
 
 # React Native Nitro Modules
 nitrogen/

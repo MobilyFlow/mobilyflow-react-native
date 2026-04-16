@@ -1,8 +1,12 @@
 #import "MobilyflowReactNativeSdk.h"
+#import "generated/ReactCodegen/RNMobilyflowReactNativeSdkSpec/RNMobilyflowReactNativeSdkSpec.h"
 #import <MobilyflowSDK/MobilyflowSDK.h>
 #import <Foundation/NSUUID.h>
 #import "Utils/ParserMobilyPurchaseSDKOptions.h"
 #import "Utils/Utils.h"
+
+@interface MobilyflowReactNativeSdk () <NativeMobilyflowReactNativeSdkSpec>
+@end
 
 @implementation MobilyflowReactNativeSdk
 

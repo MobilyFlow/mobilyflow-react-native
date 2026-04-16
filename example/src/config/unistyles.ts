@@ -1,11 +1,11 @@
-import { StyleSheet } from 'react-native-unistyles';
+import { StyleSheet } from "react-native-unistyles";
 
 export type ThemeType = {
-  name: 'light';
+  name: "light";
 };
 
 const theme: ThemeType = {
-  name: 'light',
+  name: "light",
 };
 
 export const breakpoints = {
@@ -18,7 +18,7 @@ type AppThemes = {
   light: ThemeType;
 };
 
-declare module 'react-native-unistyles' {
+declare module "react-native-unistyles" {
   export interface UnistylesBreakpoints extends AppBreakpoints {}
   export interface UnistylesThemes extends AppThemes {}
 }
@@ -29,6 +29,6 @@ StyleSheet.configure({
   },
   breakpoints,
   settings: {
-    initialTheme: 'light',
+    initialTheme: "light",
   },
 });

@@ -1,7 +1,5 @@
-#import "generated/RNMobilyflowReactNativeSdkSpec/RNMobilyflowReactNativeSdkSpec.h"
+#import <Foundation/Foundation.h>
 
-@interface MobilyflowReactNativeSdk : NSObject <NativeMobilyflowReactNativeSdkSpec>
-
-
+@interface MobilyflowReactNativeSdk : NSObject
 
 @end
