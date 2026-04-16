@@ -1,1 +1,0 @@
-{"version":3,"names":["objectTransformer","MobilyCustomer","parseFromAPI","obj","dates"],"sourceRoot":"../../../src","sources":["models/mobily-customer.ts"],"mappings":";;AAAA,SAASA,iBAAiB,QAAQ,gCAA6B;AAE/D,OAAO,MAAMC,cAAc,CAAC;EAO1B,OAAOC,YAAYA,CAACC,GAAmB,EAAE;IACvC,OAAOH,iBAAiB,CAACG,GAAG,EAAE;MAAEC,KAAK,EAAE,CAAC,WAAW,EAAE,WAAW;IAAE,CAAC,CAAC;EACtE;AACF","ignoreList":[]}
