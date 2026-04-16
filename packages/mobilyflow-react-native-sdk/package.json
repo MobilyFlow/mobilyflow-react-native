@@ -45,7 +45,7 @@
     "compile": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli android/build lib",
-    "prepare": "bob build",
+    "prepare": "bob build; node scripts/clean-codegen.js",
     "pub": "yarn prepare && npm publish --access public"
   },
   "keywords": [

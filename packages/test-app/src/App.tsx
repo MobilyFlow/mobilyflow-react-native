@@ -10,8 +10,10 @@ import { MobilyFlowService } from "./services/mobilyflow-service";
 import { useMobilyflowStore } from "./stores/mobilyflow-store";
 import { queryClient } from "./config/query-client";
 import { MobilyPurchaseSDK } from "mobilyflow-react-native-sdk";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const SAFE_AREA: ViewStyle = { flex: 1, backgroundColor: "black" };
+const FLEX: ViewStyle = { flex: 1 };
 
 export default function App() {
   useEffect(() => {
@@ -44,11 +46,13 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <SafeAreaProvider>
         <SafeAreaView style={SAFE_AREA}>
-          <NavigationContainer>
-            <StatelessDialogProvider config={statelessDialogConfig}>
-              <RootNavigator />
-            </StatelessDialogProvider>
-          </NavigationContainer>
+          <GestureHandlerRootView style={FLEX}>
+            <NavigationContainer>
+              <StatelessDialogProvider config={statelessDialogConfig}>
+                <RootNavigator />
+              </StatelessDialogProvider>
+            </NavigationContainer>
+          </GestureHandlerRootView>
         </SafeAreaView>
       </SafeAreaProvider>
     </QueryClientProvider>
