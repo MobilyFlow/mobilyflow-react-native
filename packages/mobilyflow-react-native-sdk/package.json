@@ -45,8 +45,8 @@
     "compile": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli android/build lib",
-    "prepare": "bob build",
-    "pub": "yarn prepare && npm publish --access public"
+    "build": "sh ./scripts/prebuild.sh && bob build",
+    "pub": "yarn build && npm publish --access public"
   },
   "keywords": [
     "react-native",

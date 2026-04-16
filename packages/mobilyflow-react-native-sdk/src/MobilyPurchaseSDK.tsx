@@ -11,6 +11,7 @@ import { PurchaseOptions } from './models/internal/purchase-options';
 import { MobilyTransferOwnershipStatus } from './enums/mobily-transfer-ownership-status';
 import { MobilyEvent } from './models/mobily-event';
 import { MobilyRefundDialogResult } from './enums/mobily-refund-dialog-result';
+import { BRIDGE_VERSION } from './version';
 
 function throwError(error: any) {
   if (RNPlatform.OS === 'android') {
@@ -227,11 +228,15 @@ export const MobilyPurchaseSDK = {
     }
   },
 
-  getSDKVersion: async () => {
+  getSDKNativeVersion: async () => {
     try {
       return await MobilyflowReactNativeSdk.getSDKVersion();
     } catch (error: any) {
       throw throwError(error);
     }
+  },
+
+  getSDKBridgeVersion: () => {
+    return BRIDGE_VERSION;
   },
 };

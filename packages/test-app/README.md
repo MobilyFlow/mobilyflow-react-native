@@ -41,6 +41,8 @@ cd example
 yarn prebuild
 ```
 
+Note: you need to run prebuild each time change are made in the `mobilyflow-react-native-sdk` package.
+
 ### 4. Run the app
 
 ```bash
