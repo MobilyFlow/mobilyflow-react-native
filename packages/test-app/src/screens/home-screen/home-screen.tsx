@@ -18,6 +18,7 @@ export const HomeScreen = () => {
 
   const [storeCountry, setStoreCountry] = useState<string>();
   const [mobilyflowCustomerId, setMobilyFlowCustomerId] = useState<string>();
+  const [nativeVersion, setNativeVersion] = useState<string>();
 
   const queryClient = useQueryClient();
   const isMobilyflowLoading = useMobilyflowStore((state) => state.isLoading);
@@ -29,11 +30,13 @@ export const HomeScreen = () => {
       (async () => {
         setStoreCountry(await MobilyPurchaseSDK.getStoreCountry());
         setMobilyFlowCustomerId((await MobilyPurchaseSDK.getCustomer())?.id);
+        setNativeVersion(await MobilyPurchaseSDK.getSDKNativeVersion());
       })();
 
       MobilyFlowService.addCustomerChangeListener((customer) => {
         setMobilyFlowCustomerId(customer?.id);
       });
+
     }
   }, [isMobilyflowLoading, errorLabel]);
 
@@ -109,6 +112,10 @@ export const HomeScreen = () => {
           <Button title="Manage subscriptions" onPress={handleManageSubscriptions} />
           <Button title="Transfer Ownership" onPress={handleTransferOwnership} />
           <Button title="Send diagnostic" onPress={handleSendDiagnostic} />
+        </Box>
+        <Box gap={10} mt={20} style={{ maxWidth: 500, alignItems: 'center' }}>
+          <Text>Native Version: {nativeVersion}</Text>
+          <Text>Bridge Version: {MobilyPurchaseSDK.getSDKBridgeVersion()}</Text>
         </Box>
       </Box>
     </ScrollView>

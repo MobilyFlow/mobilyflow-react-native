@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <RCTTypeSafety/RCTConvertHelpers.h>
-#import "../generated/RNMobilyflowReactNativeSdkSpec/RNMobilyflowReactNativeSdkSpec.h"
+#import "../generated/ReactCodegen/RNMobilyflowReactNativeSdkSpec/RNMobilyflowReactNativeSdkSpec.h"
 #import <MobilyflowSDK/MobilyflowSDK.h>
 
 NS_ASSUME_NONNULL_BEGIN
