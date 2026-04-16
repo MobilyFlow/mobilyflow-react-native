@@ -4,31 +4,31 @@
     "build:android": {
       "env": ["ORG_GRADLE_PROJECT_newArchEnabled"],
       "inputs": [
-        "package.json",
-        "android",
-        "!android/build",
-        "src/*.ts",
-        "src/*.tsx",
-        "example/package.json",
-        "example/android",
-        "!example/android/.gradle",
-        "!example/android/build",
-        "!example/android/app/build"
+        "packages/mobilyflow-react-native-sdk/package.json",
+        "packages/mobilyflow-react-native-sdk/android/**",
+        "!packages/mobilyflow-react-native-sdk/android/build/**",
+        "packages/mobilyflow-react-native-sdk/src/**/*.ts",
+        "packages/mobilyflow-react-native-sdk/src/**/*.tsx",
+        "packages/test-app/package.json",
+        "packages/test-app/android/**",
+        "!packages/test-app/android/.gradle/**",
+        "!packages/test-app/android/build/**",
+        "!packages/test-app/android/app/build/**"
       ],
       "outputs": []
     },
     "build:ios": {
       "env": ["RCT_NEW_ARCH_ENABLED"],
       "inputs": [
-        "package.json",
-        "*.podspec",
-        "ios",
-        "src/*.ts",
-        "src/*.tsx",
-        "example/package.json",
-        "example/ios",
-        "!example/ios/build",
-        "!example/ios/Pods"
+        "packages/mobilyflow-react-native-sdk/package.json",
+        "packages/mobilyflow-react-native-sdk/*.podspec",
+        "packages/mobilyflow-react-native-sdk/ios/**",
+        "packages/mobilyflow-react-native-sdk/src/**/*.ts",
+        "packages/mobilyflow-react-native-sdk/src/**/*.tsx",
+        "packages/test-app/package.json",
+        "packages/test-app/ios/**",
+        "!packages/test-app/ios/build/**",
+        "!packages/test-app/ios/Pods/**"
       ],
       "outputs": []
     }

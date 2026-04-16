@@ -1,0 +1,1 @@
+{"version":3,"names":["objectTransformer","MobilyOneTimeProduct","parseFromAPI","obj"],"sourceRoot":"../../../../src","sources":["models/product/mobily-one-time-product.ts"],"mappings":";;AAAA,SAASA,iBAAiB,QAAQ,mCAAgC;AAElE,OAAO,MAAMC,oBAAoB,CAAC;EAIhC,OAAOC,YAAYA,CAACC,GAAyB,EAAE;IAC7C,OAAOH,iBAAiB,CAACG,GAAG,EAAE,CAAC,CAAC,CAAC;EACnC;AACF","ignoreList":[]}
