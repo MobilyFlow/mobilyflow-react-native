@@ -8,11 +8,6 @@
   "scripts": {
     "sdk": "yarn workspace mobilyflow-react-native-sdk",
     "test-app": "yarn workspace test-app",
-    "prepare": "yarn workspace mobilyflow-react-native-sdk prepare",
-    "lint": "yarn workspace mobilyflow-react-native-sdk lint",
-    "test": "yarn workspace mobilyflow-react-native-sdk test",
-    "compile": "yarn workspace mobilyflow-react-native-sdk compile",
-    "typecheck": "yarn workspace mobilyflow-react-native-sdk compile",
     "clean": "yarn workspace mobilyflow-react-native-sdk clean",
     "pub": "yarn workspace mobilyflow-react-native-sdk pub"
   },
