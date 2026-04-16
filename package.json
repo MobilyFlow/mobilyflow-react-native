@@ -1,5 +1,5 @@
 {
-  "name": "mobilyflow-react-native-workspace",
+  "name": "mobilyflow-react-native",
   "private": true,
   "workspaces": [
     "packages/*"
