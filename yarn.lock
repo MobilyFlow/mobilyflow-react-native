@@ -9683,9 +9683,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"mobilyflow-react-native-workspace@workspace:.":
+"mobilyflow-react-native@workspace:.":
   version: 0.0.0-use.local
-  resolution: "mobilyflow-react-native-workspace@workspace:."
+  resolution: "mobilyflow-react-native@workspace:."
   dependencies:
     turbo: ^1.10.7
   languageName: unknown
