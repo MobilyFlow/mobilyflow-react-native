@@ -8,6 +8,9 @@
       ],
       "@/assets/*": [
         "./assets/*"
+      ],
+      "mobilyflow-react-native-sdk": [
+        "../mobilyflow-react-native-sdk/src/index"
       ]
     }
   },
