@@ -1,5 +1,6 @@
 // SDK
 export { MobilyPurchaseSDK } from './MobilyPurchaseSDK';
+export type { MobilyPurchaseSDKOptions } from './NativeMobilyflowReactNativeSdk';
 
 // Enums
 export { MobilyEnvironment } from './enums/mobily-environment';

@@ -1,17 +1,17 @@
-import { Box } from '../../components/uikit/Box';
-import { Text } from '../../components/uikit/text';
-import { Select } from '../../components/select/select';
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import { MobilyEnvironment, MobilyPurchaseSDK } from 'mobilyflow-react-native-sdk';
-import { Button } from '../../components/button';
-import { ActivityIndicator, ScrollView } from 'react-native';
-import { useMobilyflowParams } from '../../services/use-mobilyflow-params';
-import { MobilyFlowService } from '../../services/mobilyflow-service';
-import { useMobilyflowStore } from '../../stores/mobilyflow-store';
-import { getMobilyflowErrorLabel } from '../../utils/utils';
-import { useMobilyflowRefresh } from '../../services/use-mobilyflow-refresh';
-import { MOBILYFLOW_API_EXTRA_URLS } from '../../../env';
-import { useQueryClient } from '@tanstack/react-query';
+import { MobilyEnvironment, MobilyPurchaseSDK } from "mobilyflow-react-native-sdk";
+import { Box } from "../../components/uikit/Box";
+import { Text } from "../../components/uikit/text";
+import { Select } from "../../components/select/select";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { Button } from "../../components/button";
+import { ActivityIndicator, ScrollView } from "react-native";
+import { useMobilyflowParams } from "../../services/use-mobilyflow-params";
+import { MobilyFlowService } from "../../services/mobilyflow-service";
+import { useMobilyflowStore } from "../../stores/mobilyflow-store";
+import { getMobilyflowErrorLabel } from "../../utils/utils";
+import { useMobilyflowRefresh } from "../../services/use-mobilyflow-refresh";
+import { MOBILYFLOW_API_EXTRA_URLS } from "../../../env";
+import { useQueryClient } from "@tanstack/react-query";
 
 export const HomeScreen = () => {
   const { customerId, environment, apiUrl } = useMobilyflowParams();
@@ -36,7 +36,6 @@ export const HomeScreen = () => {
       MobilyFlowService.addCustomerChangeListener((customer) => {
         setMobilyFlowCustomerId(customer?.id);
       });
-
     }
   }, [isMobilyflowLoading, errorLabel]);
 
@@ -48,8 +47,8 @@ export const HomeScreen = () => {
 
   const handleTransferOwnership = useCallback(async () => {
     await MobilyPurchaseSDK.requestTransferOwnership();
-    await queryClient.invalidateQueries({ queryKey: ['mobilyflow', 'entitlements'] });
-    await queryClient.invalidateQueries({ queryKey: ['mobilyflow', 'external-entitlements'] });
+    await queryClient.invalidateQueries({ queryKey: ["mobilyflow", "entitlements"] });
+    await queryClient.invalidateQueries({ queryKey: ["mobilyflow", "external-entitlements"] });
   }, [queryClient]);
 
   const handleSendDiagnostic = useCallback(async () => {
@@ -65,9 +64,9 @@ export const HomeScreen = () => {
             <Select
               placeholder="Customer"
               data={[
-                { label: 'gregoire', value: 'gregoire' },
-                { label: 'gregoire-ios', value: 'gregoire-ios' },
-                { label: 'gregoire-android', value: 'gregoire-android' },
+                { label: "gregoire", value: "gregoire" },
+                { label: "gregoire-ios", value: "gregoire-ios" },
+                { label: "gregoire-android", value: "gregoire-android" },
               ]}
               value={customerId}
               onChange={MobilyFlowService.setCustomerId}
@@ -78,9 +77,9 @@ export const HomeScreen = () => {
             <Select
               placeholder="Environment"
               data={[
-                { label: 'development', value: MobilyEnvironment.DEVELOPMENT },
-                { label: 'staging', value: MobilyEnvironment.STAGING },
-                { label: 'production', value: MobilyEnvironment.PRODUCTION },
+                { label: "development", value: MobilyEnvironment.DEVELOPMENT },
+                { label: "staging", value: MobilyEnvironment.STAGING },
+                { label: "production", value: MobilyEnvironment.PRODUCTION },
               ]}
               value={environment}
               onChange={MobilyFlowService.setEnvironment}
@@ -90,7 +89,7 @@ export const HomeScreen = () => {
             <Text>MobilyFlow API URL</Text>
             <Select
               placeholder="https://api.mobilyflow.com/v1/"
-              data={[{ label: 'production', value: null }, ...MOBILYFLOW_API_EXTRA_URLS]}
+              data={[{ label: "production", value: null }, ...MOBILYFLOW_API_EXTRA_URLS]}
               value={apiUrl}
               onChange={MobilyFlowService.setApiURL}
             />
@@ -113,7 +112,7 @@ export const HomeScreen = () => {
           <Button title="Transfer Ownership" onPress={handleTransferOwnership} />
           <Button title="Send diagnostic" onPress={handleSendDiagnostic} />
         </Box>
-        <Box gap={10} mt={20} style={{ maxWidth: 500, alignItems: 'center' }}>
+        <Box gap={10} mt={20} style={{ maxWidth: 500, alignItems: "center" }}>
           <Text>Native Version: {nativeVersion}</Text>
           <Text>Bridge Version: {MobilyPurchaseSDK.getSDKBridgeVersion()}</Text>
         </Box>
