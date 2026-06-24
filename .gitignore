@@ -85,3 +85,5 @@ packages/mobilyflow-react-native-sdk/android/generated
 # React Native Nitro Modules
 nitrogen/
 packages/test-app/env.ts
+
+.envrc
