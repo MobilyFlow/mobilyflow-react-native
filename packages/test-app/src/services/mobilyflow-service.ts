@@ -1,12 +1,13 @@
 import { MobilyCustomer, MobilyEnvironment, MobilyPurchaseSDK } from 'mobilyflow-react-native-sdk';
-import { MMKV } from 'react-native-mmkv';
-import { Listener as MMKVListener } from 'react-native-mmkv/lib/typescript/src/Types';
+import { createMMKV, type MMKV } from 'react-native-mmkv';
 import { useMobilyflowStore } from '../stores/mobilyflow-store';
 import { queryClient } from '../config/query-client';
 import { MOBILYFLOW_API_KEY, MOBILYFLOW_APP_ID } from '../../env';
 
+type MMKVListener = ReturnType<MMKV['addOnValueChangedListener']>;
+
 export class MobilyFlowService {
-  private static storage = new MMKV({ id: 'mobilyflow' });
+  private static storage = createMMKV({ id: 'mobilyflow' });
   private static storageListener: MMKVListener;
 
   private static customerId: string;
@@ -85,7 +86,7 @@ export class MobilyFlowService {
     if (apiURL) {
       this.storage.set('apiURL', apiURL);
     } else {
-      this.storage.delete('apiURL');
+      this.storage.remove('apiURL');
     }
 
     this.init();
