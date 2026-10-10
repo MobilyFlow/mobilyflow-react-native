@@ -249,9 +249,9 @@ RCT_EXPORT_MODULE()
   resolve([NSNumber numberWithBool:[MobilyPurchaseSDK isBillingAvailable]]);
 }
 
-- (void)isForwardingEnable:(NSString *)externalRef resolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
+- (void)isForwardingEnabled:(NSString *)externalRef resolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
 
-  [MobilyPurchaseSDK isForwardingEnableWithExternalRef:externalRef completionHandler:^(BOOL result, NSError * _Nullable error) {
+  [MobilyPurchaseSDK isForwardingEnabledWithExternalRef:externalRef completionHandler:^(BOOL result, NSError * _Nullable error) {
     if (error) {
       reject([NSString stringWithFormat:@"%ld", error.code], error.description, error);
     } else {

@@ -14,7 +14,7 @@ export class MobilyEvent {
   itemId: string | null;
   customerId: string | null;
   type: MobilyEventType;
-  extras: any | null;
+  details: any | null;
   platform: MobilyPlatform;
   isSandbox: boolean;
   Customer: MobilyCustomer | null;
@@ -31,7 +31,7 @@ export class MobilyEvent {
         'subscriptionId',
         'itemId',
         'customerId',
-        'extras',
+        'details',
         'Customer',
         'Product',
         'ProductOffer',

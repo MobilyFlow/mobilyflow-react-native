@@ -42,7 +42,7 @@ export interface Spec extends TurboModule {
   sendDiagnostic(): Promise<void>;
   getStoreCountry(): Promise<string | null>;
   isBillingAvailable(): Promise<boolean>;
-  isForwardingEnable(externalRef: string): Promise<boolean>;
+  isForwardingEnabled(externalRef: string): Promise<boolean>;
 
   getCustomer(): Promise<MobilyCustomer | null>;
   getSDKVersion(): Promise<string>;

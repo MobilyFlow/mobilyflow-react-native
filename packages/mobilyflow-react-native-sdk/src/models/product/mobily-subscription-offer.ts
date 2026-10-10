@@ -19,13 +19,13 @@ export class MobilySubscriptionOffer {
   countBillingCycle: number;
   android_offerId: string;
   ios_offerId: string | null;
-  extras: any | null;
+  metadata: any | null;
   status: MobilyProductStatus;
   name: string;
 
   static parseFromAPI(obj: MobilySubscriptionOffer) {
     return objectTransformer(obj, {
-      nullIfUndefined: ['externalRef', 'ios_offerId', 'extras'],
+      nullIfUndefined: ['externalRef', 'ios_offerId', 'metadata'],
     });
   }
 }

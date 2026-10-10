@@ -7,13 +7,13 @@ export class MobilySubscriptionGroup {
   referenceName: string;
   name: string;
   description: string;
-  extras: any | null;
+  metadata: any | null;
   Products: MobilyProduct[];
 
   static parseFromAPI(obj: MobilySubscriptionGroup) {
     obj.Products ??= [];
     return objectTransformer(obj, {
-      nullIfUndefined: ['extras'],
+      nullIfUndefined: ['metadata'],
       mapping: {
         Products: MobilyProduct.parseFromAPI,
       },

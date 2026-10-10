@@ -5,7 +5,7 @@ export class MobilyCustomer {
   createdAt: Date;
   updatedAt: Date;
   externalRef: string;
-  forwardNotificationEnable: boolean;
+  hasForwardingEnabled: boolean;
 
   static parseFromAPI(obj: MobilyCustomer) {
     return objectTransformer(obj, { dates: ['createdAt', 'updatedAt'] });

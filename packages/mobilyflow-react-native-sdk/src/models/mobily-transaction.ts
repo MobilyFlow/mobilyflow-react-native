@@ -22,9 +22,9 @@ export class MobilyTransaction {
   itemId: string | null;
   productOfferId: string | null;
   platform: MobilyPlatform;
-  startDate: Date | null;
-  endDate: Date | null;
-  refundDate: Date | null;
+  startsAt: Date | null;
+  endsAt: Date | null;
+  refundedAt: Date | null;
   isSandbox: boolean;
 
   static parseFromAPI(obj: MobilyCustomer) {
@@ -34,11 +34,11 @@ export class MobilyTransaction {
         'subscriptionId',
         'itemId',
         'productOfferId',
-        'startDate',
-        'endDate',
-        'refundDate',
+        'startsAt',
+        'endsAt',
+        'refundedAt',
       ],
-      dates: ['createdAt', 'updatedAt', 'startDate', 'endDate', 'refundDate'],
+      dates: ['createdAt', 'updatedAt', 'startsAt', 'endsAt', 'refundedAt'],
     });
   }
 }

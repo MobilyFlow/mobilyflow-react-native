@@ -211,9 +211,9 @@ export const MobilyPurchaseSDK = {
     }
   },
 
-  isForwardingEnable: async (externalRef: string) => {
+  isForwardingEnabled: async (externalRef: string) => {
     try {
-      return await MobilyflowReactNativeSdk.isForwardingEnable(externalRef);
+      return await MobilyflowReactNativeSdk.isForwardingEnabled(externalRef);
     } catch (error: any) {
       throw throwError(error);
     }

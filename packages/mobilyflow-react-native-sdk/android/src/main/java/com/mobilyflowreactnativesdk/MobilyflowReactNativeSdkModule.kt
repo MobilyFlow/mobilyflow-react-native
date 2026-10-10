@@ -263,11 +263,11 @@ class MobilyflowReactNativeSdkModule(reactContext: ReactApplicationContext) :
     }
   }
 
-  override fun isForwardingEnable(externalRef: String, promise: Promise) {
+  override fun isForwardingEnabled(externalRef: String, promise: Promise) {
     val executor = Executors.newSingleThreadExecutor()
     executor.execute {
       try {
-        val result = MobilyPurchaseSDK.isForwardingEnable(externalRef)
+        val result = MobilyPurchaseSDK.isForwardingEnabled(externalRef)
         promise.resolve(result)
       } catch (error: Exception) {
         throwError(error, promise)

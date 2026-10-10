@@ -47,12 +47,12 @@ export const EntitlementView = (props: EntitlementViewProps) => {
           </>
         ) : (
           <>
-            <Text>Start Date: {formatDate(entitlement.Subscription.startDate)}</Text>
-            <Text>End Date: {formatDate(entitlement.Subscription.endDate)}</Text>
-            <Text>Auto Renew: {entitlement.Subscription.autoRenewEnable ? '✅' : '❌'}</Text>
+            <Text>Start Date: {formatDate(entitlement.Subscription.startsAt)}</Text>
+            <Text>End Date: {formatDate(entitlement.Subscription.endsAt)}</Text>
+            <Text>Auto Renew: {entitlement.Subscription.isAutoRenewing ? '✅' : '❌'}</Text>
             <Text>Managed Here: {entitlement.Subscription.isManagedByThisStoreAccount ? '✅' : '❌'}</Text>
             {entitlement.Subscription.hasPauseScheduled && (
-              <Text>Has Pause: ✅ (resume: {formatDate(entitlement.Subscription.resumeDate)})</Text>
+              <Text>Has Pause: ✅ (resume: {formatDate(entitlement.Subscription.resumesAt)})</Text>
             )}
             {entitlement.Subscription.ProductOffer && (
               <Text>Offer: {entitlement.Subscription.ProductOffer.identifier}</Text>

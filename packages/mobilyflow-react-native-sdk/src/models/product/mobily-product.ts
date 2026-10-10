@@ -17,7 +17,7 @@ export class MobilyProduct {
   ios_sku: string | null;
 
   type: MobilyProductType;
-  extras: any | null;
+  metadata: any | null;
 
   priceMillis: number;
   currencyCode: string;
@@ -38,7 +38,7 @@ export class MobilyProduct {
         'android_sku',
         'android_basePlanId',
         'ios_sku',
-        'extras',
+        'metadata',
         'oneTime',
         'subscription',
       ],

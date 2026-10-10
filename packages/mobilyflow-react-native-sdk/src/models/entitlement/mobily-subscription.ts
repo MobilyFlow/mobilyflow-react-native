@@ -7,8 +7,8 @@ export class MobilySubscription {
   updatedAt: Date;
   productId: string;
   productOfferId: string | null;
-  startDate: Date;
-  endDate: Date;
+  startsAt: Date;
+  endsAt: Date;
   platform: MobilyPlatform;
   renewProductId: string | null;
   renewProductOfferId: string | null;
@@ -16,14 +16,14 @@ export class MobilySubscription {
   regularPriceMillis: number;
   renewPriceMillis: number;
   currency: string;
-  offerExpiryDate: Date | null;
+  offerExpiresAt: Date | null;
   offerRemainingCycle: number;
-  autoRenewEnable: boolean;
+  isAutoRenewing: boolean;
   isInGracePeriod: boolean;
   isInBillingIssue: boolean;
   hasPauseScheduled: boolean;
   isPaused: boolean;
-  resumeDate: Date | null;
+  resumesAt: Date | null;
   isExpiredOrRevoked: boolean;
   isManagedByThisStoreAccount: boolean;
   lastPlatformTxOriginalId: string | null;
@@ -34,13 +34,13 @@ export class MobilySubscription {
 
   static parseFromAPI(obj: MobilySubscription) {
     return objectTransformer(obj, {
-      dates: ['createdAt', 'updatedAt', 'startDate', 'endDate', 'offerExpiryDate', 'resumeDate'],
+      dates: ['createdAt', 'updatedAt', 'startsAt', 'endsAt', 'offerExpiresAt', 'resumesAt'],
       nullIfUndefined: [
         'productOfferId',
         'renewProductId',
         'renewProductOfferId',
-        'offerExpiryDate',
-        'resumeDate',
+        'offerExpiresAt',
+        'resumesAt',
         'lastPlatformTxOriginalId',
         'Product',
         'ProductOffer',
