@@ -1,13 +1,13 @@
 import { objectTransformer } from '../utils/object-transformer';
 import { MobilyTransactionStatus } from '../enums/mobily-transaction-status';
-import { MobilyCustomer, MobilyPlatform } from 'mobilyflow-react-native-sdk';
+import { MobilyCustomer, MobilyPlatform, MobilyStore } from 'mobilyflow-react-native-sdk';
 
 export class MobilyTransaction {
   id: string;
   createdAt: Date;
   updatedAt: Date;
-  platformTxId: string;
-  platformTxOriginalId: string | null;
+  storeId: string;
+  storeOriginalId: string | null;
   customerId: string;
   quantity: number;
   country: string;
@@ -21,7 +21,10 @@ export class MobilyTransaction {
   subscriptionId: string | null;
   itemId: string | null;
   productOfferId: string | null;
+  /** OS of the device the purchase was made on. */
   platform: MobilyPlatform;
+  /** Store the purchase was made on. Null for purchases made before this field existed, until the backend backfill. */
+  store: MobilyStore | null;
   startsAt: Date | null;
   endsAt: Date | null;
   refundedAt: Date | null;
@@ -30,7 +33,8 @@ export class MobilyTransaction {
   static parseFromAPI(obj: MobilyCustomer) {
     return objectTransformer(obj, {
       nullIfUndefined: [
-        'platformTxOriginalId',
+        'store',
+        'storeOriginalId',
         'subscriptionId',
         'itemId',
         'productOfferId',

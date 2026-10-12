@@ -6,6 +6,7 @@ export type { MobilyPurchaseSDKOptions } from './NativeMobilyflowReactNativeSdk'
 export { MobilyEnvironment } from './enums/mobily-environment';
 export { MobilyEventType } from './enums/mobily-event-type';
 export { MobilyPlatform } from './enums/mobily-platform';
+export { MobilyStore } from './enums/mobily-store';
 export { MobilyProductOfferType } from './enums/mobily-product-offer-type';
 export { MobilyProductStatus } from './enums/mobily-product-status';
 export { MobilyProductType } from './enums/mobily-product-type';

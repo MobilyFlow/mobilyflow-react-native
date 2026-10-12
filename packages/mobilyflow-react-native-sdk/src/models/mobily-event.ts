@@ -1,5 +1,11 @@
 import { objectTransformer } from '../utils/object-transformer';
-import { MobilyCustomer, MobilyPlatform, MobilyProduct, MobilySubscriptionOffer } from 'mobilyflow-react-native-sdk';
+import {
+  MobilyCustomer,
+  MobilyPlatform,
+  MobilyStore,
+  MobilyProduct,
+  MobilySubscriptionOffer,
+} from 'mobilyflow-react-native-sdk';
 import { MobilyEventType } from '../enums/mobily-event-type';
 import { MobilyTransaction } from './mobily-transaction';
 import { MobilySubscription } from './entitlement/mobily-subscription';
@@ -15,7 +21,10 @@ export class MobilyEvent {
   customerId: string | null;
   type: MobilyEventType;
   details: any | null;
+  /** OS of the device the purchase was made on. */
   platform: MobilyPlatform;
+  /** Store the purchase was made on. Null for purchases made before this field existed, until the backend backfill. */
+  store: MobilyStore | null;
   isSandbox: boolean;
   Customer: MobilyCustomer | null;
   Product: MobilyProduct | null;
@@ -27,6 +36,7 @@ export class MobilyEvent {
   static parseFromAPI(obj: MobilyCustomer) {
     return objectTransformer(obj, {
       nullIfUndefined: [
+        'store',
         'transactionId',
         'subscriptionId',
         'itemId',

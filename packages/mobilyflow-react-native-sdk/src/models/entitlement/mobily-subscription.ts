@@ -1,4 +1,4 @@
-import { MobilyPlatform, MobilyProduct, MobilySubscriptionOffer } from 'mobilyflow-react-native-sdk';
+import { MobilyPlatform, MobilyStore, MobilyProduct, MobilySubscriptionOffer } from 'mobilyflow-react-native-sdk';
 import { objectTransformer } from '../../utils/object-transformer';
 
 export class MobilySubscription {
@@ -9,7 +9,10 @@ export class MobilySubscription {
   productOfferId: string | null;
   startsAt: Date;
   endsAt: Date;
+  /** OS of the device the purchase was made on. */
   platform: MobilyPlatform;
+  /** Store the purchase was made on. Null for purchases made before this field existed, until the backend backfill. */
+  store: MobilyStore | null;
   renewProductId: string | null;
   renewProductOfferId: string | null;
   lastPriceMillis: number;
@@ -26,7 +29,7 @@ export class MobilySubscription {
   resumesAt: Date | null;
   isExpiredOrRevoked: boolean;
   isManagedByThisStoreAccount: boolean;
-  lastPlatformTxOriginalId: string | null;
+  lastStoreOriginalTransactionId: string | null;
   Product: MobilyProduct | null;
   ProductOffer: MobilySubscriptionOffer | null;
   RenewProduct: MobilyProduct | null;
@@ -36,12 +39,13 @@ export class MobilySubscription {
     return objectTransformer(obj, {
       dates: ['createdAt', 'updatedAt', 'startsAt', 'endsAt', 'offerExpiresAt', 'resumesAt'],
       nullIfUndefined: [
+        'store',
         'productOfferId',
         'renewProductId',
         'renewProductOfferId',
         'offerExpiresAt',
         'resumesAt',
-        'lastPlatformTxOriginalId',
+        'lastStoreOriginalTransactionId',
         'Product',
         'ProductOffer',
         'RenewProduct',
