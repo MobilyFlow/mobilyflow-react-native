@@ -1,0 +1,16 @@
+packages/mobilyflow-react-native-sdk/MobilyflowReactNativeSdk.podspec
+  h_c12f6e934b9ef0 24
+packages/mobilyflow-react-native-sdk/android/build.gradle
+  h_c12f6e934b9ef0 100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0210fd88213c90f3e6ae5f4a23ecbad1915ef4f5",
+  "prompts": {},
+  "humans": {
+    "h_c12f6e934b9ef0": {
+      "author": "LaGregance <gregoire.taja@gmail.com>"
+    }
+  }
+}
