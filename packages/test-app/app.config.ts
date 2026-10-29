@@ -23,6 +23,7 @@ export default ({  }: ConfigContext): ExpoConfig => ({
       {
         ios: {
           deploymentTarget: "16.4",
+          enableSceneSupport: true,
         },
       },
     ],
