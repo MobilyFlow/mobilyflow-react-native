@@ -1,0 +1,19 @@
+packages/test-app/app.config.ts
+  s_e93a3154638127::t_477d94d7705cd2 26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "86233c4d4cbeac69ae9c008dc068eb93bb7074c4",
+  "prompts": {},
+  "sessions": {
+    "s_e93a3154638127": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "34ead7d5-8127-4f92-a901-7402c2b44d25",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "LaGregance <gregoire.taja@gmail.com>"
+    }
+  }
+}
